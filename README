@@ -1,0 +1,21 @@
+ankoder_on_rails
+==============
+
+This plugin connects to the Ankoder API for the online video converting service.
+
+Setup your access_key and private_key in config/ankoder.yml 
+
+Examples:
+  >>Ankoder::Profile.find(:all)
+  => [#<Ankoder::Profile:0x2af7971f28e0 @attributes={"video_codec"=>"h263", "name"=>"(3gp)", 
+     "audio_rate"=>8000, "video_bitrate"=>300.0, "audio_channel"=>1, "video_format"=>"3gp", "id"=>5, 
+     "audio_codec"=>"libamrnb", "height"=>144, "created_at"=>Thu Feb 07 08:07:18 +0000 2008, "width"=>176}>]
+
+  >>@download = Ankoder::Download.create('url' => 'http://host.com/file.avi', :postback_url => 'http://your_own_host.com/postback/download')
+  =>#<Ankoder::Download:0x2af7971bacb0 @attributes={"name"=>nil, "specs"=>{"audio"=>{"codec"=>""}, "size"=>nil, "spec"=>{"content_type"=>"", 
+     "codec"=>"", "height"=>"", "fps"=>"", "width"=>""}}, "id"=>1477, "progress"=>nil, "created_at"=>Thu Feb 21 06:29:36 +0000 2008}>
+
+  >>@job = Ankoder.job.create(:original_file_id => "123", :profile_id => "12312")
+
+
+Copyright (c) 2009 Ankoder.com, released under the MIT license

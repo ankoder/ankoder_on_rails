@@ -1,0 +1,9 @@
+development:
+  access_key: 
+  private_key: 
+  host: api.ankoder.com
+
+production:
+  access_key: 
+  private_key: 
+  host: api.ankoder.com
