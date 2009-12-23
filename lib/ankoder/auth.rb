@@ -59,7 +59,7 @@ module Ankoder
     RESOURCES.each do |k|
       Auth.module_eval(%{
                          def #{k.to_s+"s"}
-                           klass = #{k.to_s.camelize}
+                           klass = #{k.to_s.ankoder_camelize}
                            klass.session = @session
                            klass
                          end

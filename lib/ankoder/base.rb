@@ -237,7 +237,7 @@ module Ankoder
           eval("@#{m.to_s}")
         else
           if object_id = @attributes[m.to_s+"_id"] # belongs_to
-            klass = Ankoder::const_get(m.to_s.camelize)
+            klass = Ankoder::const_get(m.to_s.ankoder_camelize)
             klass.session = self.class.session
             klass.find(object_id)
           else
@@ -249,6 +249,6 @@ module Ankoder
   end
 
   RESOURCES.each do |k|
-    Ankoder.module_eval(%{class #{k.to_s.camelize} < Base; end})
+    Ankoder.module_eval(%{class #{k.to_s.ankoder_camelize} < Base; end})
   end
 end

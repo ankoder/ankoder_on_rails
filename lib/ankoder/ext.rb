@@ -2,7 +2,7 @@ class String
   # convert "undercore_string" in "UnderscoreString"
   #
   # Method from Rails
-  def camelize
+  def ankoder_camelize
     self.gsub(/\/(.?)/) { "::" + $1.upcase }.gsub(/(^|_)(.)/) { $2.upcase }
   end
 end
